@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React,{useState} from "react"
 import Navbar from './Component/Navbar/Navbar';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 function App() {
   const [toggledrawersidebar,settogledrawersidebar]=useState({
@@ -21,7 +22,10 @@ function App() {
   const [editcreatechanelbtn ,seteditcreatechanelbtn] =useState(false)
   const[videouploadpage,setvideouploadpage]=useState(false);
   return (
-    <Navbar seteditcreatechenelbtn={seteditcreatechanelbtn }/>
+    <Router>
+      <Navbar seteditcreatechenelbtn={seteditcreatechanelbtn } toggledrawer={toggledrawer}/>
+    </Router>
+    
   );
 }
 
